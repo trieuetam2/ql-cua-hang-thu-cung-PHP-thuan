@@ -1,0 +1,77 @@
+<?php
+    session_start();
+    ob_start();
+    //khai bao file connect db
+    include "./function/config.php"; 
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quản lý cửa hàng thú cưng</title>
+    <link rel="shortcut icon" type="image/png" href="./img/logo.jpg"/>
+    <link rel="stylesheet" href="./css/bsgrid.min.css" />
+    <link rel="stylesheet" href="./css/style.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
+
+</head>
+<body>
+
+    <!-- header -->
+        <?php include "./layout/header.php"; ?>
+    <!-- end header -->
+
+    <?php 
+        if(isset($_GET['page'])){
+            $page = $_GET['page'];
+        }
+        else
+        {
+            include "./views/slider.php";
+            $page = 'home';
+        }
+        
+        //kiem tra ton tai trang hay ko
+
+        //ko co day ve home
+        if(file_exists('views/'.$page.'.php')){
+            include 'views/'.$page.'.php'; 
+        }
+        
+        
+        //cart
+        else if(file_exists('views/cart/'.$page.'.php')){
+            include 'views/cart/'.$page.'.php'; 
+        }
+        //login
+        else if(file_exists('views/login/'.$page.'.php')){
+            include 'views/login/'.$page.'.php'; 
+        }
+        
+        else{
+            echo "Khong tim thay trang 404";
+        }
+
+    
+        
+        //go to top 
+        ?> 
+            <div class="go-to-top"><i class="fas fa-chevron-up"></i></div>
+        <?php
+
+        include "./layout/footer.php"; 
+        ob_end_flush();
+    
+    
+    ?>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    
+    <script src="./script/script.js"></script>
+</body>
+</html>
