@@ -4,6 +4,8 @@
     //khai bao file connect db
     include "./function/config.php"; 
 
+    //khai bao file chua cac ham
+    include "./function/myfunction.php"; 
 ?>
 
 <!DOCTYPE html>
@@ -42,7 +44,23 @@
             include 'views/'.$page.'.php'; 
         }
         
-        
+        //admin
+        else if(file_exists('views/admin/'.$page.'.php')){
+            if(isset($_SESSION['admin']) || isset($_SESSION['staff'])){
+                include 'views/admin/'.$page.'.php'; 
+            }else{
+                 ?>
+                <body>
+                    <center class="notAllow">
+                    <img src="img/stop.png" />
+                    <br>
+                    <br>
+                    <h1>Bạn không có quyền truy cập trang web này!!!</h1>
+                    </center>
+                </body>
+                <?php
+            }
+        }
         //cart
         else if(file_exists('views/cart/'.$page.'.php')){
             include 'views/cart/'.$page.'.php'; 
