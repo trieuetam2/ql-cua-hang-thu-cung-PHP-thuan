@@ -3,8 +3,8 @@
             <a class="buy_continute" href="index.php"><i class="fa fa-arrow-circle-left"></i> Trở lại mua hàng</a>
             <div class="product__details">
                 <?php 
-                $r3 = getID();
-                    foreach($r3 as $keyID => $valueID){
+                $r4 = getID();
+                    foreach($r4 as $keyID => $valueID){
                 ?>
                     <div class="product__details-img">
                         <img src="./<?php echo $valueID['anhsp']; ?>" alt="">

@@ -34,11 +34,6 @@
         <label for="checkbox2" class="term-service">
           <input type="checkbox" id="checkbox2">
 
-          <div class="checked-box" style="font-size: 13px;">
-            Tôi đã đọc và đồng ý với
-            <a href="#" class="a-hover"> điều khoản và điều kiện</a>
-          </div>
-
         </label>
 
         <button type="submit" class="form-submit" name="register_submit">Đăng ký</button>

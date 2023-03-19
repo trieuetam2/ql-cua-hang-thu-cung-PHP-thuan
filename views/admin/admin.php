@@ -22,8 +22,6 @@
                                 <ul>
                                     <li class="active-bg"><a href="">Trang chủ</a></li>
                                     <li><a href="index.php?page=add_product">Thêm sản phẩm</a></li>
-                                    <li><a href="index.php?page=manage_order">Quản lý đơn hàng</a></li>
-                                    <li><a href="index.php?page=thongke">Thống kê</a></li>
                                     <li><a href="./index.php">Thoát</a></li>
                                 </ul>
                             </div>
