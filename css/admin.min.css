@@ -21,10 +21,11 @@
 .menu_option > ul > li {
     text-align: center;
     line-height: 32px;
-    border: 1px solid #e4e4e4;
-    padding: 10px;
+    border: 2px solid #e4e4e4;
+    padding: 15px;
     list-style: none;
 }
+/* tang do day border va tang padding cho menu-option */
 .menu_option > ul > li > a {
     display: block;
     text-decoration: none;
