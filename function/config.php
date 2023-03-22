@@ -3,7 +3,7 @@
 
 	$servername = 'localhost';
 	$username = 'root';
-	$password = '';
+	$password = '01012001Hien';
 	$dbname = 'shop';
 
 	//connect database
@@ -16,7 +16,3 @@
 	// else{
 	// 	echo 'ket noi thanh cong';
 	// }
-
-
-
-?>
