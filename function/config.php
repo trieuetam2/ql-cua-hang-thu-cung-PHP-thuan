@@ -1,18 +1,18 @@
-<?php 
-	//ket noi toi database
+<?php
+//ket noi toi database
 
-	$servername = 'localhost';
-	$username = 'root';
-	$password = '01012001Hien';
-	$dbname = 'shop';
+$servername = 'localhost';
+$username = 'root';
+$password = '01012001Hien';
+$dbname = 'shop';
 
-	//connect database
-	$conn = mysqli_connect($servername, $username, $password, $dbname);
- 
-	//check
-	if(!$conn){
-		echo 'loi ket noi ' . mysqli_connect_error(); 
-	}
+//connect database
+$conn = mysqli_connect($servername, $username, $password, $dbname);
+
+//check
+if (!$conn) {
+	echo 'loi ket noi ' . mysqli_connect_error();
+}
 	// else{
 	// 	echo 'ket noi thanh cong';
 	// }
