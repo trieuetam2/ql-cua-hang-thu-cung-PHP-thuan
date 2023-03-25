@@ -19,14 +19,14 @@
                 <div class="product__pride">
                     <div class="product__pride-oldPride" style="font-size: 20px;">
                         <span class="Price">
-                            <bdi>75.000&nbsp;
+                            <bdi><?php echo number_format($valueID['giasp']); ?>&nbsp;
                                 <span class="currencySymbol">₫</span>
                             </bdi>
                         </span>
                     </div>
                     <div class="product__pride-newPride" style="font-size: 40px;">
                         <span class="Price">
-                            <bdi><?php echo number_format($valueID['giasp']); ?>&nbsp;
+                            <bdi><?php echo number_format($valueID['giasp'] * 0.7); ?>&nbsp;
                                 <span class="currencySymbol">₫</span>
                             </bdi>
                         </span>
