@@ -1,77 +1,106 @@
-<?php 
+<?php
 
-    //lay ra san pham noi bat
-    function getProVip(){
-        global $conn;
-        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 5";
-        $query = mysqli_query($conn, $sql);
-        $result = array();
+//lay ra san pham noi bat
+function getProVip()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 5";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $result[] = $row;
-        }
-
-        return $result;
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result[] = $row;
     }
 
-    //lay ra san pham cho cho
-    function getProDog(){
-        global $conn;
-        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1";
-        $query = mysqli_query($conn, $sql);
-        $result = array();
+    return $result;
+}
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $result[] = $row;
-        }
+//lay ra san pham cho cho
+function getProDog()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1";
+    $query = mysqli_query($conn, $sql);
+    $result = array();
 
-        return $result;
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result[] = $row;
     }
 
-    //lay ra san pham cho meo
-    function getProCat(){
-        global $conn;
-        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 2";
-        $query = mysqli_query($conn, $sql);
-        $result1 = array();
+    return $result;
+}
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $result1[] = $row;
-        }
+//lay ra san pham cho meo
+function getProCat()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 2";
+    $query = mysqli_query($conn, $sql);
+    $result1 = array();
 
-        return $result1;
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result1[] = $row;
     }
 
-    //lay ra con giống
-    function getConGiong(){
-        global $conn;
-        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 4";
-        $query = mysqli_query($conn, $sql);
-        $result2 = array();
+    return $result1;
+}
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $result2[] = $row;
-        }
+//lay ra con giống
+function getConGiong()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 4";
+    $query = mysqli_query($conn, $sql);
+    $result2 = array();
 
-        return $result2;
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result2[] = $row;
     }
 
-    //lay ra san pham all
-    function getProAll(){
-        global $conn;
-        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 OR id_danhmuc = 5 ORDER BY id_sanpham DESC LIMIT 10";
-        $query = mysqli_query($conn, $sql);
-        $result2 = array();
+    return $result2;
+}
 
-        while ($row = mysqli_fetch_assoc($query)){
-            $result2[] = $row;
-        }
+//lay ra san pham all
+function getProAll()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 OR id_danhmuc = 5 ORDER BY id_sanpham DESC LIMIT 10";
+    $query = mysqli_query($conn, $sql);
+    $result2 = array();
 
-        return $result2;
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result2[] = $row;
     }
 
+    return $result2;
+}
 
+//lay ra ID san pham cho cart
+function getID()
+{
+    global $conn;
+    $products = '';
+    if (isset($_GET['id'])) {
+        $id = mysqli_real_escape_string($conn, $_GET['id']);
 
+        $sql = "SELECT * FROM sanpham WHERE id_sanpham = $id";
 
+        $products = mysqli_query($conn, $sql);
+    }
+    return $products;
+}
 
-?>
+//lay ra san pham ngau nhien
+function getProRand()
+{
+    global $conn;
+    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 ORDER BY RAND() LIMIT 6";
+    $query = mysqli_query($conn, $sql);
+    $result3 = array();
+
+    while ($row = mysqli_fetch_assoc($query)) {
+        $result3[] = $row;
+    }
+
+    return $result3;
+}
