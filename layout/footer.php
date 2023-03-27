@@ -15,6 +15,7 @@
         <div class="footer__info-content">
             <h3>Giới thiệu</h3>
             <p>Website quản lý, mua bán thú cưng</p>
+            <p>SĐT 038633591</p>
         </div>
 
 
