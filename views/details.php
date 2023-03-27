@@ -26,7 +26,7 @@
                     </div>
                     <div class="product__pride-newPride" style="font-size: 40px;">
                         <span class="Price">
-                            <bdi><?php echo number_format($valueID['giasp'] * 0.7); ?>&nbsp;
+                            <bdi><?php echo number_format($valueID['giasp'] * ((100 - $valueID['discount']) / 100)); ?>&nbsp;
                                 <span class="currencySymbol">₫</span>
                             </bdi>
                         </span>
