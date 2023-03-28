@@ -40,7 +40,7 @@ if (isset($_GET['txtsearch'])) {
                                         <img lazy data-src="./<?php echo $valueFind['anhsp']; ?>" alt="">
                                     </div>
                                     <div class="product__sale">
-                                        <h4>-3%</h4>
+                                        <h4 <?php echo $valueFind['dicount']; ?>></h4>
                                     </div>
 
                                     <div class="product__content">

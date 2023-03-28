@@ -3,7 +3,7 @@
 
 $servername = 'localhost';
 $username = 'root';
-$password = 'abc';
+$password = '01012001Hien';
 $dbname = 'shop';
 
 //connect database

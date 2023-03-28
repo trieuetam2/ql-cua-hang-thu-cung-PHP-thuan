@@ -1,30 +1,31 @@
 <?php
-    if(isset($_POST['upload'])){
+if (isset($_POST['upload'])) {
 
-        $name = $_POST['name'];
-        $price = $_POST['price'];
-        $mota = $_POST['content'];
-        $idcata = $_POST['categori'];
-        $imgage_name = $_FILES['img']['name'];
-        $tmp_name = $_FILES['img']['tmp_name'];
-        $folder = "./upload/" .$imgage_name;
-        move_uploaded_file($tmp_name, $folder);
+    $name = $_POST['name'];
+    $price = $_POST['price'];
+    $mota = $_POST['content'];
+    $idcata = $_POST['categori'];
+    $discount = $_POST['discount'];
+    $imgage_name = $_FILES['img']['name'];
+    $tmp_name = $_FILES['img']['tmp_name'];
+    $folder = "./upload/" . $imgage_name;
+    move_uploaded_file($tmp_name, $folder);
 
-        $sql = "INSERT INTO sanpham (tensp, anhsp, giasp, mota, id_danhmuc)
-        VALUES ('$name', '$folder', '$price', '$mota', '$idcata')";
-    
-        if(mysqli_query($conn, $sql)){
-            header("Location: index.php?page=admin");
-        }
-        else{
-            echo "Lưu thất bại đã xảy ra lỗi";
-        }
+    $sql = "INSERT INTO sanpham (tensp, anhsp, giasp, mota, id_danhmuc, discount)
+        VALUES ('$name', '$folder', '$price', '$mota', '$idcata', '$discount')";
+
+    if (mysqli_query($conn, $sql)) {
+        header("Location: index.php?page=admin");
+    } else {
+        echo "Lưu thất bại đã xảy ra lỗi";
     }
+}
 
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -33,6 +34,7 @@
     <link rel="stylesheet" href="./css/bsgrid.min.css" />
     <link rel="stylesheet" href="./css/admin.min.css" />
 </head>
+
 <body>
 
     <div class="with70">
@@ -51,30 +53,30 @@
             <div class="col-md-9">
                 <div class="menu_option-head2">Thêm sản phẩm</div>
                 <form action="" method="POST" class="list" style="padding-left: 10px;" enctype="multipart/form-data">
-    
+
                     <div class="wrap-field">
                         <label>Tên sản phẩm</label>
                         <div class="right-wrap-field">
                             <input type="text" name="name" required>
                         </div>
                     </div>
-    
+
                     <div class="wrap-field">
                         <label>Ảnh sản phẩm</label>
                         <div class="right-wrap-field">
                             <input type="file" name="img" onchange="readURL(this);" required>
-                            <img src="" alt="" id="preImg" style="max-width: 300px;"/><br>
+                            <img src="" alt="" id="preImg" style="max-width: 300px;" /><br>
                         </div>
 
                     </div>
-    
+
                     <div class="wrap-field">
                         <label>Giá</label>
                         <div class="right-wrap-field">
                             <input type="text" name="price" required>
                         </div>
                     </div>
-    
+
                     <div class="wrap-field">
                         <label>Danh mục</label>
                         <div class="right-wrap-field">
@@ -87,7 +89,13 @@
                             </select>
                         </div>
                     </div>
-    
+                    <div class="wrap-field">
+                        <label>Giảm Giá</label>
+                        <div class="right-wrap-field">
+                            <input type="text" name="discount" required>
+                        </div>
+                    </div>
+
                     <div class="wrap-field2">
                         <label>Mô tả</label>
                         <div class="right-wrap-field2">
@@ -98,11 +106,11 @@
                             </div>
                         </div>
                     </div>
-    
+
                 </form>
-    
+
                 <!-- pagination -->
-                
+
             </div>
         </div>
     </div>
@@ -112,14 +120,13 @@
             if (input.files && input.files[0]) {
                 var reader = new FileReader();
 
-                reader.onload = function (e) {
+                reader.onload = function(e) {
                     $('#preImg').attr('src', e.target.result);
                 };
 
                 reader.readAsDataURL(input.files[0]);
             }
         }
-
     </script>
 
     <script src="./script/ckeditor/ckeditor.js"></script>
@@ -127,4 +134,5 @@
         CKEDITOR.replace('content');
     </script>
 </body>
+
 </html>
