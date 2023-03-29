@@ -70,7 +70,58 @@
         return $result2;
     }
 
+    
+    //lay ra con giong ngau nhien
+    function getConGiongRand(){
+        global $conn;
+        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 4 ORDER BY RAND() LIMIT 5";
+        $query = mysqli_query($conn, $sql);
+        $result3 = array();
 
+        while ($row = mysqli_fetch_assoc($query)){
+            $result3[] = $row;
+        }
+
+        return $result3;
+    }
+
+    //lay ra san pham ngau nhien
+    function getProRand(){
+        global $conn;
+        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 ORDER BY RAND() LIMIT 5";
+        $query = mysqli_query($conn, $sql);
+        $result3 = array();
+
+        while ($row = mysqli_fetch_assoc($query)){
+            $result3[] = $row;
+        }
+
+        return $result3;
+    }
+
+    //lay ra chi tiet sp (detail)
+    function getPro_id($id){
+        global $conn;
+        $sql = "SELECT * FROM sanpham WHERE id_sanpham = $id";
+        $query = mysqli_query($conn, $sql);
+        $result3 = mysqli_fetch_assoc($query);
+
+        return $result3;
+    }
+
+    //lay ra ID san pham cho cart
+    function getID(){
+        global $conn;
+        $products = '';
+        if(isset($_GET['id'])){
+            $id = mysqli_real_escape_string($conn, $_GET['id']);
+    
+            $sql = "SELECT * FROM sanpham WHERE id_sanpham = $id";
+    
+            $products = mysqli_query($conn, $sql);
+        }
+        return $products;
+    }
 
 
 
