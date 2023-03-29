@@ -13,8 +13,9 @@
     <div class="footer__info">
 
         <div class="footer__info-content">
-            <h3>Giới thiệu</h3>
+            <h3>THÔNG TIN VỀ CHÚNG TÔI</h3>
             <p>Website quản lý, mua bán thú cưng</p>
+            <p>SĐT 0386335691</p>
         </div>
 
 
