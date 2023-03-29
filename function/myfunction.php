@@ -60,18 +60,19 @@ function getConGiong()
     return $result2;
 }
 
-//lay ra san pham all
-function getProAll()
-{
-    global $conn;
-    $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 OR id_danhmuc = 5 ORDER BY id_sanpham DESC LIMIT 10";
-    $query = mysqli_query($conn, $sql);
-    $result2 = array();
+    //lay ra san pham all
+    function getProAll(){
+        global $conn;
+        $sql = "SELECT * FROM sanpham WHERE id_danhmuc = 1 OR id_danhmuc = 2 OR id_danhmuc = 3 OR id_danhmuc = 5 ORDER BY id_sanpham DESC LIMIT 10";
+        $query = mysqli_query($conn, $sql);
+        $result2 = array();
 
-    while ($row = mysqli_fetch_assoc($query)) {
-        $result2[] = $row;
+        while ($row = mysqli_fetch_assoc($query)){
+            $result2[] = $row;
+        }
+
+        return $result2;
     }
-}
 
 //lay ra con giong ngau nhien
 function getConGiongRand(){
