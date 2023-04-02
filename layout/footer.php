@@ -34,6 +34,6 @@
     </div>
 
     <div class="footer__copyright">
-        <center> 2022 All rights reserved.</center>
+        <center> 2023 All rights reserved.</center>
     </div>
 </footer>
