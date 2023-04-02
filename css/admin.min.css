@@ -33,6 +33,32 @@
 .menu_option > ul > li > a:hover {
     opacity: 0.7;
 }
+.dashboard{
+    margin-top: 40px;
+}
+.dashboard > div{
+    color: white;
+}
+.dashboard > div > i{
+    text-align: right;
+    color: #c7c7c7;
+}
+.dashboard-box1{
+    padding: 10px;
+    background-color: cadetblue;
+}
+.dashboard-box2{
+    padding: 10px;
+    background-color:crimson;
+}
+.dashboard-box3{
+    padding: 10px;
+    background-color: coral;
+}
+.dashboard-box4{
+    padding: 10px;
+    background-color: cornflowerblue;
+}
 .list {
     margin-top: 20px;
     box-shadow: 0 3px 8px rgb(0 0 0 / 15%);

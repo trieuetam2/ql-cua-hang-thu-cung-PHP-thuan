@@ -28,6 +28,92 @@
                         </div>
                         <div class="col-md-9">
                             <div class="list">
+
+                            <div class="row dashboard">
+                            <div class="col-md-3 col-6">
+                                <div class="dashboard-box1">
+                                <i class="fa fa-users  mb-2" style="font-size: 50px;"></i>
+                                <h4 style="color:white;">Số người dùng</h4>
+                                <h5 style="color:white;">
+                                <?php
+                                    $sql="SELECT * from dangki";
+                                    $result=$conn-> query($sql);
+                                    $count=0;
+                                    if ($result-> num_rows > 0){
+                                        while ($row=$result-> fetch_assoc()) {
+                                
+                                            $count=$count+1;
+                                        }
+                                    }
+                                    echo $count;
+                                ?></h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="dashboard-box2">
+                                <i class="fa fa-th-large mb-2" style="font-size: 50px;"></i>
+                                <h4 style="color:white;">Danh mục</h4>
+                                <h5 style="color:white;">
+                                <?php
+                                
+                                $sql="SELECT * from danhmuc";
+                                $result=$conn-> query($sql);
+                                $count=0;
+                                if ($result-> num_rows > 0){
+                                    while ($row=$result-> fetch_assoc()) {
+                            
+                                        $count=$count+1;
+                                    }
+                                }
+                                echo $count;
+                            ?>
+                            </h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="dashboard-box3">
+                                <i class="fa fa-th mb-2" style="font-size: 50px;"></i>
+                                <h4 style="color:white;">Sản phẩm</h4>
+                                <h5 style="color:white;">
+                                <?php
+                                
+                                $sql="SELECT * from sanpham";
+                                $result=$conn-> query($sql);
+                                $count=0;
+                                if ($result-> num_rows > 0){
+                                    while ($row=$result-> fetch_assoc()) {
+                            
+                                        $count=$count+1;
+                                    }
+                                }
+                                echo $count;
+                            ?>
+                            </h5>
+                                </div>
+                            </div>
+                            <div class="col-md-3 col-6">
+                                <div class="dashboard-box4">
+                                <i class="fa fa-list mb-2" style="font-size: 50px;"></i>
+                            <h4 style="color:white;">Số đơn hàng</h4>
+                            <h5 style="color:white;">
+                            <?php
+                            
+                            $sql="SELECT * from dathang";
+                            $result=$conn-> query($sql);
+                            $count=0;
+                            if ($result-> num_rows > 0){
+                                while ($row=$result-> fetch_assoc()) {
+                        
+                                    $count=$count+1;
+                                }
+                            }
+                            echo $count;
+                        ?>
+                        </h5>
+                                </div>
+                            </div>
+                        </div>
+
                                 <div class="menu_option-head">Danh sách sản phẩm</div>
                                 <div class="add-product">
                                     <a href="index.php?page=add_product">Thêm sản phẩm</a>
